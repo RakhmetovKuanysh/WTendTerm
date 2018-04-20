@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Endterm</title>
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+</head>
+<body>
+    <div>
+        <div class = "container">
+            <div style="display: flex;flex-direction: row;align-items: flex-start;">
+            <div class = "col-lg-12">
+                <h1>Add blog</h1>
+                <form action="{% url 'add_blog' %}" method="post">
+                    <div class = "col-lg-8 offset-2">
+                        <div class = "form-group">
+                            {% csrf_token %}
+                            <input type = "text" class = "form-control" name="title"/>
+                            <textarea class="form-control" rows="5" name = "content"></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary col-lg-2 offset-5">
+                        ADD
+                    </button>
+                </form>
+            </div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
